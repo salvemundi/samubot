@@ -54,8 +54,11 @@ export = (app: Application) => {
     const versionArray: string[] = packageJson.version.split('.')
     if (typeRequest === pullRequestType.major) {
       versionArray[0] = String(parseInt(versionArray[0]) + 1)
+      versionArray[1] = String(0)
+      versionArray[2] = String(0)
     } else if (typeRequest === pullRequestType.minor) {
       versionArray[1] = String(parseInt(versionArray[1]) + 1)
+      versionArray[2] = String(0)
     } else if (typeRequest === pullRequestType.patch) {
       versionArray[2] = String(parseInt(versionArray[2]) + 1)
     }
